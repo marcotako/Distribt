@@ -14,11 +14,7 @@ public static class DefaultDistribtWebApplication
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        if (webappBuilder != null)
-        {
-            webappBuilder.Invoke(builder);
-
-        }
+        webappBuilder?.Invoke(builder);
 
         return builder.Build();
     }
